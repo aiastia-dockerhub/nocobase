@@ -1,0 +1,28 @@
+{
+  "name": "@nocobase/plugin-login-info",
+  "displayName": "Login Info",
+  "displayName.zh-CN": "登录信息",
+  "description": "Records and displays login information.",
+  "description.zh-CN": "记录并展示登录信息。",
+  "version": "0.1.0",
+  "license": "AGPL-3.0",
+  "main": "dist/server/index.js",
+  "files": [
+    "dist/server.js",
+    "dist/server.d.ts",
+    "dist/client.js",
+    "dist/client.d.ts"
+  ],
+  "peerDependencies": {
+    "@nocobase/server": "1.x",
+    "@nocobase/client": "1.x"
+  },
+  "devDependencies": {},
+  "buildConfig": {
+    "client": "src/client/index.tsx"
+  },
+  "keywords": [
+    "Login",
+    "Security"
+  ]
+}
