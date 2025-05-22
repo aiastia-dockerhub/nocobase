@@ -2,7 +2,7 @@ import React from 'react';
 import { useSystemSettings, useTranslation } from '@nocobase/client';
 
 const RecordNumberDisplay = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('login-info');
   const systemSettings = useSystemSettings();
   const recordNumber = systemSettings?.data?.data?.options?.pluginLoginInfo?.recordNumber;
 

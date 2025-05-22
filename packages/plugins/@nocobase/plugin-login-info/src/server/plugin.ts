@@ -30,14 +30,12 @@ export class PluginLoginInfoServer extends Plugin {
 
     this.app.acl.allow('loginInfo', 'updateRecordNumber', 'loggedIn');
 
-    this.app.pluginSettingsManager.add('login-info', {
+    this.app.pm.addSettings('login-info', {
       title: '{{t("Login Info Settings")}}',
       icon: 'SafetyOutlined',
       scope: 'system',
       components: {
-        SettingsComponent: this.app.pluginUiRouter.remoteRoute(
-          '@nocobase/plugin-login-info/client/SettingsPage',
-        ),
+        SettingsComponent: '@nocobase/plugin-login-info/client/SettingsPage',
       },
     });
   }

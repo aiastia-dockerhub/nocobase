@@ -6,9 +6,14 @@ import RecordNumberDisplay from './RecordNumberDisplay';
 
 export class PluginLoginInfoClient extends Plugin {
   async load() {
-    this.app.i18n.addLocales(locales);
+    // Add resource bundles for each language
+    for (const lang in locales) {
+      if (Object.prototype.hasOwnProperty.call(locales, lang)) {
+        this.app.i18n.addResourceBundle(lang, 'login-info', locales[lang]);
+      }
+    }
 
-    this.app.pluginUiManager.addComponents({
+    this.app.schemaComponentManager.addComponents({
       SettingsPage,
       RecordNumberDisplay, // Registering it just in case, though direct usage is planned
     });
